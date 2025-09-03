@@ -1,8 +1,4 @@
-interface ProfileHeaderProps {
-  displayName: string;
-  username: string;
-  profilePictureUrl: string;
-}
+import { ProfileHeaderProps } from '../types';
 
 export default function ProfileHeader({ displayName, username, profilePictureUrl }: ProfileHeaderProps) {
   return (
@@ -11,10 +7,11 @@ export default function ProfileHeader({ displayName, username, profilePictureUrl
         src={profilePictureUrl}
         alt={displayName}
         className="w-20 h-20 rounded-lg object-cover"
+        loading="lazy"
       />
       <div>
-        <h2 className="text-2xl font-bold">{displayName}</h2>
-        <p className="text-primary">@{username}</p>
+        <h2 className="text-2xl font-bold text-primary">{displayName}</h2>
+        <p className="text-accent">@{username}</p>
       </div>
     </div>
   );

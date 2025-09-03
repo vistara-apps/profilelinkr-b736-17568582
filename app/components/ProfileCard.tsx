@@ -1,44 +1,51 @@
-    'use client';
+'use client';
 
-    import ProfileHeader from './ProfileHeader';
-    import SocialLink from './SocialLink';
-    import ShareButton from './ShareButton';
+import { useState, useEffect } from 'react';
+import ProfileHeader from './ProfileHeader';
+import SocialLink from './SocialLink';
+import ShareButton from './ShareButton';
+import ViewCounter from './ViewCounter';
+import Card, { CardHeader, CardContent, CardFooter } from './ui/Card';
+import { ProfileCardProps } from '../types';
 
-    interface User {
-      fid: number;
-      display_name: string;
-      username: string;
-      profile: {
-        bio: { text: string };
-        picture: { url: string };
-      };
+export default function ProfileCard({ user, showShare, viewStats }: ProfileCardProps) {
+  const [shareLink, setShareLink] = useState('');
+  
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      setShareLink(`${window.location.origin}/u/${user.username}`);
     }
+  }, [user.username]);
 
-    interface ProfileCardProps {
-      user: User;
-      showShare: boolean;
-    }
-
-    export default function ProfileCard({ user, showShare }: ProfileCardProps) {
-      const shareLink = typeof window !== 'undefined' ? `${window.location.origin}/u/${user.username}` : '';
-
-      return (
-        <div className="bg-surface p-4 rounded-lg shadow-card max-w-sm mx-auto">
-          <ProfileHeader
-            displayName={user.display_name}
-            username={user.username}
-            profilePictureUrl={user.profile.picture.url}
-          />
-          <p className="mt-md text-base">{user.profile.bio.text}</p>
-          <div className="mt-md">
-            <SocialLink username={user.username} />
-          </div>
-          {showShare && (
-            <div className="mt-md">
-              <ShareButton link={shareLink} />
+  return (
+    <Card variant="elevated" className="max-w-sm mx-auto w-full">
+      <CardHeader>
+        <ProfileHeader
+          displayName={user.display_name}
+          username={user.username}
+          profilePictureUrl={user.profile.picture.url}
+        />
+      </CardHeader>
+      
+      <CardContent>
+        <p className="text-base leading-6">{user.profile.bio.text || 'No bio provided'}</p>
+        
+        <div className="mt-md flex flex-col gap-md">
+          <SocialLink username={user.username} />
+          
+          {viewStats && (
+            <div className="text-sm text-gray-600">
+              <ViewCounter username={user.username} />
             </div>
           )}
         </div>
-      );
-    }
-  
+      </CardContent>
+      
+      {showShare && (
+        <CardFooter>
+          <ShareButton link={shareLink} />
+        </CardFooter>
+      )}
+    </Card>
+  );
+}
