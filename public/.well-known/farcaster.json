@@ -7,24 +7,27 @@
   "frame": {
     "version": "1",
     "name": "ProfileLinkr",
-    "subtitle": "Built with Zara",
-    "description": "ProfileLinkr is a Base Mini App built with Zara.",
-    "iconUrl": "https://0co.to/images/zara-2.png",
-    "homeUrl": "https://b736baa6c17b4667911c1526746a7017-0ii8-gxmhrk76c-vistara.vercel.app",
-    "splashImageUrl": "https://b736baa6c17b4667911c1526746a7017-0ii8-gxmhrk76c-vistara.vercel.app/splash.png",
-    "splashBackgroundColor": "#000000",
-    "heroImageUrl": "https://b736baa6c17b4667911c1526746a7017-0ii8-gxmhrk76c-vistara.vercel.app/image.png",
-    "tagline": "ProfileLinkr",
+    "subtitle": "Your Digital Identity, Instantly Sharable",
+    "description": "A simple Base mini-app that allows users to instantly view and share their digital identity, pulling data from key social platforms.",
+    "iconUrl": "https://b736baa6-c17b-4667-911c-1526746a7017.vistara.dev/icon.png",
+    "homeUrl": "https://b736baa6-c17b-4667-911c-1526746a7017.vistara.dev",
+    "splashImageUrl": "https://b736baa6-c17b-4667-911c-1526746a7017.vistara.dev/splash.png",
+    "splashBackgroundColor": "#f2f5f9",
+    "heroImageUrl": "https://b736baa6-c17b-4667-911c-1526746a7017.vistara.dev/hero.png",
+    "tagline": "Your Digital Identity, Instantly Sharable",
     "screenshotUrls": [
-      "https://b736baa6c17b4667911c1526746a7017-0ii8-gxmhrk76c-vistara.vercel.app/screenshot.png",
-      "https://b736baa6c17b4667911c1526746a7017-0ii8-gxmhrk76c-vistara.vercel.app/screenshot.png"
+      "https://b736baa6-c17b-4667-911c-1526746a7017.vistara.dev/screenshot1.png",
+      "https://b736baa6-c17b-4667-911c-1526746a7017.vistara.dev/screenshot2.png"
     ],
     "primaryCategory": "social",
     "tags": [
       "base",
       "miniapp",
-      "onchainkit"
+      "onchainkit",
+      "farcaster",
+      "identity",
+      "profile"
     ],
-    "webhookUrl": "https://b736baa6c17b4667911c1526746a7017-0ii8-gxmhrk76c-vistara.vercel.app/api/webhook"
+    "webhookUrl": "https://b736baa6-c17b-4667-911c-1526746a7017.vistara.dev/api/frame"
   }
 }
